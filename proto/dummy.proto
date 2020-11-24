@@ -1,0 +1,25 @@
+syntax="proto3";
+
+package dummy;
+
+service DummyService {
+  rpc Echo(EchoRequest) returns (EchoResponse);
+  rpc Ping(PingRequest) returns (stream PingResponse);
+}
+
+message EchoRequest {
+  string body = 1;
+}
+
+message EchoResponse {
+  string body = 1;
+}
+
+message PingRequest {
+  string body = 1;
+}
+
+message PingResponse {
+  string body = 1;
+}
+
