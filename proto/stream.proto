@@ -1,0 +1,16 @@
+syntax="proto3";
+
+package stream;
+
+service StreamService {
+  rpc Ping(PingRequest) returns (stream PingResponse);
+}
+
+message PingRequest {
+  string body = 1;
+}
+
+message PingResponse {
+  string body = 1;
+}
+
