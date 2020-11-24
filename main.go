@@ -1,10 +1,12 @@
-package server
+package main
 
 import (
 	"log"
 	"net"
 
+	echopb "github.com/protos/go/api/grpc/echo"
 	streampb "github.com/protos/go/api/grpc/stream"
+	"github.com/service/echo"
 	"github.com/service/stream"
 	"google.golang.org/grpc"
 )
@@ -17,13 +19,12 @@ func main() {
 
 	s:= grpc.NewServer()
 	streampb.RegisterStreamServiceServer(s, stream.NewStreamService())
-	streampb.RegisterStreamServiceServer(s, stream.NewStreamService())
+	echopb.RegisterEchoServiceServer(s, echo.NewEchoService())
 
 	if err := s.Serve(ln); err != nil {
 		log.Fatalf("%s\n", err)
 	}
 }
-
 
 
 
