@@ -10,7 +10,7 @@ proto p:
 	PATH=$(CURDIR)/bin bin/prototool generate --debug
 
 build b:
-	go build -o server main.go
+	go build -o bin/server main.go
 
 rebuild rb:
 	make proto
