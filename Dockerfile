@@ -30,6 +30,7 @@ WORKDIR /opt/app
 COPY . .
 RUN go mod download
 
+RUN make p
 RUN make b
 FROM alpine:latest
 
