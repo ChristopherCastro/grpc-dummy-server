@@ -1,0 +1,12 @@
+protoc:
+  version: 3.9.1
+
+generate:
+  go_options:
+    import_path: github.com/ChristopherCastro/grpc-dummy-server
+
+  plugins:
+    - name: go
+      type: go
+      output: protos/go
+      flags: plugins=grpc
